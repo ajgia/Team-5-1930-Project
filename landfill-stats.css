@@ -1,0 +1,84 @@
+#topBar {
+  width: 1440px;
+  height: 130px;
+  position: relative;
+  background-color: grey;
+}
+
+#box {
+  width: 292px;
+  height: 73px;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  left: 3.33%;
+  right: 76.39%;
+}
+
+#taboo {
+  font-size: 48px;
+  color: slategrey;
+  line-height: 0;
+  position: absolute;
+  top: 15%;
+  left: 4.61%;
+  right: 80.76%;
+  letter-spacing: 0.5em;
+}
+
+#stats {
+  position: absolute;
+  width: 1076px;
+  height: 335px;
+  left: 182px;
+  top: 183px;
+}
+
+#number {
+  position: absolute;
+  margin: 0;
+  left: 0%;
+  right: 0%;
+  top: 25%;
+  line-height: 0;
+  font-size: 140px;
+  text-align: center;
+}
+
+#content {
+  position: absolute;
+  margin: 0;
+  left: 3.62%;
+  right: 3.62%;
+  top: 50%;
+  bottom: 0%;
+  font-style: normal;
+  font-weight: normal;
+  line-height: normal;
+  font-size: 60px;
+  text-align: center;
+}
+
+#right {
+  width: 0;
+  height: 0;
+  border-top: 25px solid transparent;
+  border-left: 50px solid #555;
+  border-bottom: 25px solid transparent;
+  position: absolute;
+  right: 5%;
+  top: 50%;
+}
+
+#left {
+  width: 0;
+  height: 0;
+  border-top: 25px solid transparent;
+  border-right: 50px solid #555;
+  border-bottom: 25px solid transparent;
+  position: absolute;
+  left: 5%;
+  top: 50%;
+}
