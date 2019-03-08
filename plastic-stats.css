@@ -9,7 +9,7 @@
   width: 23%;
   height: 50%;
   background-color: white;
-  position: absolute;
+  position: relative;
   top: 50%;
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
@@ -21,32 +21,33 @@
   font-size: 48px;
   color: slategrey;
   line-height: 0;
-  position: absolute;
+  position: relative;
   top: 15%;
   left: 4.61%;
   right: 80.76%;
-  letter-spacing: 0.5em;
+  z-index: 0;
+  letter-spacing: normal;
 }
 
 #stats {
-  position: absolute;
-  width: 1076px;
-  height: 335px;
-  left: 182px;
-  top: 183px;
+  position: relative;
+  width: 60%;
+  height: 100%;
+  left: 25%;
+  top: 30%;
 }
 
 #number {
   position: absolute;
   margin: 0;
-  left: 6%;
-  top: 25%;
+  right: 75%;
+  top: 70%;
   line-height: 0;
   font-size: 210px;
 }
 
 #products {
-  position: absolute;
+  position: relative;
   margin: 0;
   right: 1%;
   top: 2%;
@@ -55,12 +56,10 @@
 }
 
 #LDPE {
-  position: absolute;
+  position: relative;
   margin: 0;
   left: 3.62%;
-  right: 3.62%;
-  top: 65%;
-  bottom: 0%;
+  top: 100%;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
@@ -91,3 +90,15 @@
   top: 50%;
 }
 
+.slider {
+  width: 50%;
+  height: 30%;
+  display: flex;
+  overflow-x: auto;
+}
+
+.slide {
+  width: 50%;
+  height: 100%;
+  flex-shrink: 0;
+}
