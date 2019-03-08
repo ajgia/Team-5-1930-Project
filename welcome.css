@@ -49,3 +49,18 @@
   left: 5%;
   top: 50%;
 }
+.eyesContainer {
+  width: 100%;
+  text-align: center;
+}
+.eyes {
+  margin: 0 auto;
+  display: inline-block;
+  height: 300px;
+  width: 500px;
+}
+.text {
+  text-align: center;
+  font-size: 24pt;
+  font-family: Arial;
+}
