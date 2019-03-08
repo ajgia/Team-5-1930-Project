@@ -25,12 +25,12 @@
   top: 15%;
   left: 4.61%;
   right: 80.76%;
-  letter-spacing: 0.5em;
+  letter-spacing: normal;
 }
 
 #stats {
   position: absolute;
-  width: 100%;
+  width: 90%;
   height: 20%;
   left: %;
   top: 24%;
@@ -39,7 +39,7 @@
 #number {
   position: absolute;
   margin: 0;
-  left: 0%;
+  left: 11%;
   right: 0%;
   top: 25%;
   line-height: 0;
@@ -50,8 +50,8 @@
 #content {
   position: absolute;
   margin: 0;
-  left: 3.62%;
-  right: 3.62%;
+  left: 28%;
+  right: %;
   top: 60%;
   bottom: 0%;
   font-style: normal;
@@ -97,7 +97,7 @@
 .links {
   position: absolute;
   bottom: 39%;
-  left: 42%;
+  left: 36%;
 
 }
 
@@ -139,8 +139,8 @@
 
 .links > a {
   display: inline-flex;
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
   color: white;
   background: grey;
   text-decoration: none;
