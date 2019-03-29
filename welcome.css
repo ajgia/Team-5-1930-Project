@@ -30,6 +30,7 @@
 
 .content {
     background-image: url("landing_background.jpeg");
+    height: 100%;
 }
 
 #right {
