@@ -1,6 +1,6 @@
 #topBar {
   width: 100%;
-  height: 20vh;
+  height: 10vh;
   position: relative;
   background-color: grey;
 }
@@ -26,6 +26,10 @@
   left: 4.61%;
   right: 80.76%;
   letter-spacing: 0.5em;
+}
+
+.content {
+    background-image: url("landing_background.jpeg");
 }
 
 #right {
