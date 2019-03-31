@@ -34,7 +34,7 @@ html, body {
 
 .content {
     background-image: url("landing_background.jpeg");
-    height: 100%;
+    height: 100vh;
 }
 
 #right {
@@ -76,6 +76,6 @@ html, body {
 
 .content {
 	border: 1px red solid;
-	height: 100vh;
+
 	
 }
