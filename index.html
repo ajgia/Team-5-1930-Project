@@ -4,6 +4,9 @@
     <title>Welcome</title>
     <meta charset = "utf-8">
     <link rel = "stylesheet" type = "text/css" href = "welcome.css"/>
+
+    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+    <script src="setup_firebase_team5.js"></script>
   </head>
 
   <body>
@@ -17,15 +20,20 @@
         <img class = "eyes" src = "Animation/EyesAnimation.gif" alt = "Eyes Animation">
       </div>
       <div class = "text">
-        <p>Feminine Products</p>
+        <p id="change">Feminine Products</p>
         <p>Don't have to be scary...</p>
       </div>
     </div>
     <a href ="landfill-stats.html">
       <div id="right"></div>
     </a>
-  
-  
-  
+
+      <script>
+          var out = document.getElementById("change");
+        var db = firebase.database().ref().child("year1");
+         db.on("value", snap => out.innerText = snap.val());
+      </script>
+
+
   </body>
 </html>
