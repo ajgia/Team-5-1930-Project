@@ -23,13 +23,15 @@
       <p id="taboo">TABOO</p>
     </div>
 		
-		<div id="content">hey</div>
+		<div id="content">
+			<div id="firebaseui-auth-container"></div>
+			<div id="loader">Loading...</div>
+			<a href="index.html">
+				<div id="left"></div>
+			</a>
+		</div>
 		
-		<div id="firebaseui-auth-container"></div>
-		<div id="loader">Loading...</div>
-		<a href="index.html">
-      <div id="left"></div>
-    </a>
+		
 		<!-- Import JQuery -->
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 		<script>
@@ -54,7 +56,7 @@
 				},
 				// Will use popup for IDP Providers sign-in flow instead of the default, redirect.
 				signInFlow: 'popup',
-				signInSuccessUrl: 'main.html',
+				signInSuccessUrl: 'greeting.html',
 			
 				signInOptions: [
 				// Leave the lines as is for the providers you want to offer your users.
@@ -66,7 +68,7 @@
 				//firebase.auth.PhoneAuthProvider.PROVIDER_ID
 				],
 				// Terms of service url.
-				tosUrl: 'main.html',
+				tosUrl: 'welcome.html',
 				// Privacy policy url.
 				privacyPolicyUrl: 'logged_in.html'
 			};
