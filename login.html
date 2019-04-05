@@ -1,0 +1,88 @@
+<html>
+	<head>
+		<link rel = "stylesheet" type = "text/css" href = "login.css"/>
+		<script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+		<script>
+			// Initialize Firebase
+			var config = {
+				apiKey: "AIzaSyDDVzoSJOT7n9uISZeY9UpTqB6MmYgQPU0",
+				authDomain: "project-1930.firebaseapp.com",
+				databaseURL: "https://project-1930.firebaseio.com",
+				projectId: "project-1930",
+				storageBucket: "project-1930.appspot.com",
+				messagingSenderId: "763891066897"
+			};
+			firebase.initializeApp(config);
+		</script>
+		<script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+		<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+	</head>
+	<body>
+		<div id="topBar">
+      <div id="box"> </div>
+      <p id="taboo">TABOO</p>
+    </div>
+		
+		<div id="content">hey</div>
+		
+		<div id="firebaseui-auth-container"></div>
+		<div id="loader">Loading...</div>
+		<a href="index.html">
+      <div id="left"></div>
+    </a>
+		<!-- Import JQuery -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script>
+			// Initialize the FirebaseUI Widget using Firebase.
+			var ui = new firebaseui.auth.AuthUI(firebase.auth());
+			
+			var uiConfig = {
+				callbacks: {
+				signInSuccessWithAuthResult: function(authResult, redirectUrl) {
+					// User successfully signed in.
+					// Return type determines whether we continue the redirect automatically
+					// or whether we leave that to developer to handle.
+					return true;
+					
+					
+				},
+				uiShown: function() {
+					// The widget is rendered.
+					// Hide the loader.
+					document.getElementById('loader').style.display = 'none';
+				}
+				},
+				// Will use popup for IDP Providers sign-in flow instead of the default, redirect.
+				signInFlow: 'popup',
+				signInSuccessUrl: 'main.html',
+			
+				signInOptions: [
+				// Leave the lines as is for the providers you want to offer your users.
+				//firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+				//firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+				//firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+				//firebase.auth.GithubAuthProvider.PROVIDER_ID,
+				firebase.auth.EmailAuthProvider.PROVIDER_ID,
+				//firebase.auth.PhoneAuthProvider.PROVIDER_ID
+				],
+				// Terms of service url.
+				tosUrl: 'main.html',
+				// Privacy policy url.
+				privacyPolicyUrl: 'logged_in.html'
+			};
+
+			// The start method will wait until the DOM is loaded.
+			ui.start('#firebaseui-auth-container', uiConfig);
+		</script>
+		<script>
+			firebase.auth().onAuthStateChanged(function(user) {
+				if (user) {
+					// User is signed in.
+				} else {
+					// No user is signed in.
+				}
+				
+			});
+		</script>
+	</body>
+</html>
