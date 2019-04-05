@@ -1,8 +1,17 @@
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    /*width: 0px; remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
 #topBar {
   width: 100%;
   height: 10vh;
   position: relative;
   background-color: #CA8682;
+  opacity: 0.7;
 }
 
 #box {
@@ -71,7 +80,7 @@
   width: 0;
   height: 0;
   border-top: 25px solid transparent;
-  border-left: 50px solid #555;
+  border-left: 50px solid #905156;
   border-bottom: 25px solid transparent;
   position: absolute;
   right: 5%;
@@ -82,7 +91,7 @@
   width: 0;
   height: 0;
   border-top: 25px solid transparent;
-  border-right: 50px solid #555;
+  border-right: 50px solid #905156;
   border-bottom: 25px solid transparent;
   position: absolute;
   left: 5%;
@@ -123,7 +132,8 @@
   width: 100%;
   height: 100%;
   border-radius: 10px;
-  background: #eee;
+  background: white;
+  opacity: 0.7;
   transform-origin: center center;
   transform: scale(1);
   transition: transform 0.5s;
@@ -147,7 +157,7 @@
   width: 2.5rem;
   height: 2.5rem;
   color: white;
-  background: grey;
+  background: #905156;
   text-decoration: none;
   align-items: center;
   justify-content: center;
