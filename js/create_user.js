@@ -6,7 +6,7 @@
 	// create this user node in the database
 	
 	firebase.auth().onAuthStateChanged(function(user){
-		firebase.database().ref("users/"+user.uid).update(
+		firebase.database().ref("user/"+user.uid).update(
 			{
 		"name":user.displayName,
 		"email":user.email
