@@ -2,13 +2,13 @@
   width: 100%;
   height: 10vh;
   position: relative;
-  background-color: grey;
+  background-color: #CA8682;
 }
 
 #box {
   width: 23%;
-  height: 50%;
-  background-color: white;
+  height: 100%;
+  //background-color: white;
   position: relative;
   top: 50%;
   -ms-transform: translateY(-50%);
@@ -18,14 +18,16 @@
 }
 
 #taboo {
-  font-size: 48px;
-  color: slategrey;
-  line-height: 0;
+  width: 75%;
+  height: 100%;
   position: absolute;
-  top: 15%;
-  left: 4.61%;
-  right: 80.76%;
-  letter-spacing: normal;
+}
+
+#section {
+    background-image: url("cloud_2.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 100vh;
 }
 
 #stats {
@@ -65,7 +67,7 @@
   width: 0;
   height: 0;
   border-top: 25px solid transparent;
-  border-left: 50px solid #555;
+  border-left: 50px solid #905156;
   border-bottom: 25px solid transparent;
   position: absolute;
   right: 5%;
@@ -76,7 +78,7 @@
   width: 0;
   height: 0;
   border-top: 25px solid transparent;
-  border-right: 50px solid #555;
+  border-right: 50px solid #905156;
   border-bottom: 25px solid transparent;
   position: absolute;
   left: 5%;
@@ -144,7 +146,7 @@
   width: 2.5rem;
   height: 2.5rem;
   color: white;
-  background: grey;
+  background: #905156;
   text-decoration: none;
   align-items: center;
   justify-content: center;
