@@ -1,6 +1,8 @@
 <html>
 	<head>
 		<link rel = "stylesheet" type = "text/css" href = "../css/greeting.css"/>
+		<script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
+		<script src ="../js/setup_firebase_team5.js"></script>
 	</head>
 	<body>
 		<div id="topBar">
@@ -8,8 +10,13 @@
       <p id="taboo">TABOO</p>
     </div>
 		<div id="content">
-			<h1>Welcome, Name!</h1>
+			<h1>Welcome, <span id = "name">Name</span>!</h1>
 		</div>
 		
+		<script>
+			var out = document.getElementById("name");
+			var db = firebase.database().ref().child("message");
+					db.on("value", snap => out.innerText = snap.val());
+		</script>
 	</body>
 </html>
