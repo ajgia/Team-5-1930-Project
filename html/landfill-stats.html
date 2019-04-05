@@ -4,18 +4,20 @@
     <title>TABOO</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="../css/landfill-stats.css">
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Source+Sans+Pro" rel="stylesheet">
+
     <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
     <script src="../js/setup_firebase_team5.js"></script>
   </head>
   <body>
     <div id="topBar">
-        <div id="box"><a href="index.html"><img src="../images/taboo_logo.png" id="taboo" alt="our logo"></a></div>
+        <div id="box"><a href="../index.html"><img src="../images/taboo_logo.png" id="taboo" alt="our logo"></a></div>
     </div>
 
     <div id="section">
     <div id="stats">
       <p id="number">20,000,000,000</p>
-      <p id="content">Menstrual products end up in <br> North American landfills each year</p>
+      <p id="content">menstrual products end up in <br> North American landfills each year</p>
     </div>
 
     <a href="plastic-stats.html">
@@ -42,8 +44,8 @@
       </div>
 
       <div class="slider">
-        <div class="slide" id="slide-0">What does my personal contribution look like? <br> Click on the buttons above to see how much waste <br> you contribute each year!</div>
-        <div class="slide" id="slide-1">Year</div>
+        <div class="slide" id="slide-0">"What does my personal contribution look like?" <br> Click on the buttons above to see how much waste <br> you contribute each year!</div>
+        <div class="slide" id="slide-1"><p>Year</p></div>
         <div class="slide" id="slide-2">Year</div>
         <div class="slide" id="slide-3">Year</div>
         <div class="slide" id="slide-4">Year</div>
@@ -59,7 +61,59 @@
     </div>
 
     <script>
+        var out1 = document.getElementById("slide-1");
+        var db1 = firebase.database().ref().child("landfill/year1");
+                db1.on("value", snap => out1.innerText = snap.val());
 
+        var out2 = document.getElementById("slide-2");
+        var db2 = firebase.database().ref().child("landfill/year2");
+                db2.on("value", snap => out2.innerText = snap.val());
+
+        var out3 = document.getElementById("slide-3");
+        var db3 = firebase.database().ref().child("landfill/year3");
+                db3.on("value", snap => out3.innerText = snap.val());
+
+        var out4 = document.getElementById("slide-4");
+        var db4 = firebase.database().ref().child("landfill/year4");
+                db4.on("value", snap => out4.innerText = snap.val());
+        var out5 = document.getElementById("slide-5");
+        var db5 = firebase.database().ref().child("landfill/year5");
+                db5.on("value", snap => out5.innerText = snap.val());
+        var out6 = document.getElementById("slide-6");
+        var db6 = firebase.database().ref().child("landfill/year6");
+                db6.on("value", snap => out6.innerText = snap.val());
+        var out7 = document.getElementById("slide-7");
+        var db7 = firebase.database().ref().child("landfill/year7");
+                db7.on("value", snap => out7.innerText = snap.val());
+        var out8 = document.getElementById("slide-8");
+        var db8 = firebase.database().ref().child("landfill/year8");
+                db8.on("value", snap => out8.innerText = snap.val());
+        var out9 = document.getElementById("slide-9");
+        var db9 = firebase.database().ref().child("landfill/year9");
+                db9.on("value", snap => out9.innerText = snap.val());
+        var out10 = document.getElementById("slide-10");
+        var db10 = firebase.database().ref().child("landfill/year10");
+                db10.on("value", snap => out10.innerText = snap.val());
+
+        DisplayImage ("../images/127.png");
+
+    //---------------------------------------------------------
+    // input param:   string name of the picture file
+    //
+    // Generic function that displays the image provided dynamically
+    //---------------------------------------------------------
+    function DisplayImage(picturefile) {
+        var container = $('<div></div>');
+        $('body').prepend(container);
+
+        var x = document.createElement("IMG");
+        x.setAttribute("src", picturefile);
+        x.setAttribute("width", "100");
+        x.setAttribute("height", "100");
+        var slide1 = document.getElementById("slide-1");
+
+        document.body.appendChild(slide1);
+    }
     </script>
 
   </body>

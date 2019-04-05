@@ -4,13 +4,17 @@
     <title>TABOO</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="../css/plastic-stats.css">
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+
+    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
+    <script src="../js/setup_firebase_team5.js"></script>
   </head>
   <body>
 
-      <div id="section">
+    <div id="section">
     <div id="topBar">
       <div id="box">
-          <a href="index.html"><img src="../images/taboo_logo.png" id="taboo" alt="our logo"></a>
+          <a href="../index.html"><img src="../images/taboo_logo.png" id="taboo" alt="our logo"></a>
       </div>
     </div>
 
@@ -37,7 +41,7 @@
         <a href="#slide-5">20</a>
         <a href="#slide-6">50</a>
         <a href="#slide-7">100</a>
-        <a href="#slide-8">1000</a>
+        <a href="#slide-8">500</a>
       </div>
 
       <div class="slider">
@@ -54,6 +58,31 @@
       </div>
     </div>
       </div>
-
+    <script>
+      var out1 = document.getElementById("slide-1");
+      var db1 = firebase.database().ref().child("plastic/year1");
+          db1.on("value", snap => out1.innerText = snap.val());
+      var out5 = document.getElementById("slide-2");
+      var db5 = firebase.database().ref().child("plastic/year5");
+          db5.on("value", snap => out5.innerText = snap.val());
+      var out10 = document.getElementById("slide-3");
+      var db10 = firebase.database().ref().child("plastic/year10");
+          db10.on("value", snap => out10.innerText = snap.val());
+      var out15 = document.getElementById("slide-4");
+      var db15 = firebase.database().ref().child("plastic/year15");
+          db15.on("value", snap => out15.innerText = snap.val());
+      var out20 = document.getElementById("slide-5");
+      var db20 = firebase.database().ref().child("plastic/year20");
+          db20.on("value", snap => out20.innerText = snap.val());
+      var out50 = document.getElementById("slide-6");
+      var db50 = firebase.database().ref().child("plastic/year50");
+          db50.on("value", snap => out50.innerText = snap.val());
+      var out100 = document.getElementById("slide-7");
+      var db100 = firebase.database().ref().child("plastic/year100");
+          db100.on("value", snap => out100.innerText = snap.val());
+      var out500 = document.getElementById("slide-8");
+      var db500 = firebase.database().ref().child("plastic/year500");
+          db500.on("value", snap => out500.innerText = snap.val());
+    </script>
   </body>
 </html>
