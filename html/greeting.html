@@ -2,27 +2,28 @@
     <head>
         <link rel = "stylesheet" type = "text/css" href = "../css/greeting.css"/>
         <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
-        <script src ="../js/setup_firebase_team5.js"></script>
+        
     </head>
     <body>
-			<script src = "../js/create_user.js"></script>
+			<script src ="../js/setup_firebase_team5.js"></script>
         <div id="topBar">
       <div id="box"><a href="../index.html"><img src="../images/taboo_logo.png" id="taboo" alt="our logo"></a></div>
     </div>
         <div id="content">
-            <script src="../js/greeting.js"></script>
-            <h1 id="banner"></h1>
-        <h2 id ="name"></h2>
 
-
+            <h1 id="banner">Hello, <span id = "name"></span></h1>
+      
         </div>
-
-        <script>
-            var out = document.getElementById("");
-            var db = firebase.database().ref().child("");
+			<!--
+			<script src = "../js/greeting.js"></script>
+-->
+<script>
+			
+            var out = document.getElementById("name");
+            var db = firebase.database().ref().child("message");
                     db.on("value", snap => out.innerText = snap.val());
-        </script> 
-
+       	
+			</script>
 
     </body>
 </html>

@@ -10,8 +10,8 @@
   
     firebase.auth().onAuthStateChanged(function(user){
     	if (user){
-          	var userName=user.displayName;			  // grab name of user
-			banner.innerText = "Hello "+ userName;    // update with Personalized Hello
+          	var userName = user.displayName;			  // grab name of user
+			banner.innerText = "Hello " + userName;    // update with Personalized Hello
 
     	} 
         
