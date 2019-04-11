@@ -1,50 +1,49 @@
 <html>
-	<head>
-		<link rel = "stylesheet" type = "text/css" href = "../css/greeting.css"/>
-		<script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
-		<script src ="../js/setup_firebase_team5.js"></script>
-	</head>
-	<body>
-		<!--<script src = "../js/create_user.js"> -->
-		<div id="topBar">
-      <div id="box"> </div>
-      <p id="taboo">TABOO</p>
+    <head>
+        <link rel = "stylesheet" type = "text/css" href = "../css/greeting.css"/>
+        <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
+        <script src ="../js/setup_firebase_team5.js"></script>
+    </head>
+    <body>
+        <!--<script src = "../js/create_user.js"> -->
+        <div id="topBar">
+      <div id="box"><a href="../index.html"><img src="../images/taboo_logo.png" id="taboo" alt="our logo"></a></div>
     </div>
-			<script src="../js/greeting.js"></script>
-			<h1 id="banner">Banner </h1>
-		<h2 id ="name"></h2>
+            <script src="../js/greeting.js"></script>
+            <h1 id="banner">Banner </h1>
+        <h2 id ="name"></h2>
 
 
-		</div>
-		
-			
-		</script>
-		<!-- <script>
-			var out = document.getElementById("name");
-			var db = firebase.database().ref().child("");
-					db.on("value", snap => out.innerText = snap.val());
-		</script> -->
-
-		<script>
-			(function(){
-
-					var firebase = app_firebase;
-
-					var banner = document.getElementById("banner");
-					var userName = " ";
+        </div>
 
 
-					//If the current user is authenticated then
+        </script>
+        <!-- <script>
+            var out = document.getElementById("name");
+            var db = firebase.database().ref().child("");
+                    db.on("value", snap => out.innerText = snap.val());
+        </script> -->
 
-					firebase.auth().onAuthStateChanged(function(user){
-						if (user){
-									var userName=user.displayName;			  // grab name of user
-						banner.innerText = "Hello "+ userName;    // update with Personalized Hello
+        <script>
+            (function(){
 
-						} 
+                    var firebase = app_firebase;
 
-					});
-			})();
-		</script>
-	</body>
+                    var banner = document.getElementById("banner");
+                    var userName = " ";
+
+
+                    //If the current user is authenticated then
+
+                    firebase.auth().onAuthStateChanged(function(user){
+                        if (user){
+                                    var userName=user.displayName;              // grab name of user
+                        banner.innerText = "Hello "+ userName;    // update with Personalized Hello
+
+                        }
+
+                    });
+            })();
+        </script>
+    </body>
 </html>
