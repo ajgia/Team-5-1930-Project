@@ -11,6 +11,11 @@ html {
     background: transparent;  /* optional: just make scrollbar invisible */
 }
 
+body {
+    margin: 0;
+    padding: 0;
+}
+
 p {
     color: white;
     font-family: 'Istok Web', sans-serif;
@@ -41,7 +46,7 @@ p {
   position: absolute;
 }
 
-#content {
+.content {
     background-image: url("../images/cloud_1.jpg");
     background-repeat: no-repeat;
     background-size: 100%;

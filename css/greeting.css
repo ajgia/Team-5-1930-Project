@@ -1,7 +1,5 @@
 html, body {
     height: 100%;
-    margin: 0;
-    padding: 0;
 }
 
 html {
@@ -13,9 +11,15 @@ html {
     background: transparent;  /* optional: just make scrollbar invisible */
 }
 
-p {
+body {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
     color: white;
     font-family: 'Istok Web', sans-serif;
+    vertical-align: middle;
 }
 
 #topBar {
@@ -43,11 +47,14 @@ p {
   position: absolute;
 }
 
-#content {
+.content {
     background-image: url("../images/cloud_1.jpg");
     background-repeat: no-repeat;
     background-size: 100%;
-    height: 90vh;
+    border: 3px #DEA89E solid;
+    height: 100vh;
+    text-align: center;
+    font-size: 24pt;
 }
 
 #right {
@@ -65,20 +72,11 @@ p {
   width: 100%;
   text-align: center;
 }
+
 .eyes {
   margin: 0 auto;
   display: inline-block;
   height: 300px;
   width: 500px;
 }
-.text {
-  text-align: center;
-  font-size: 24pt;
-  font-family: Arial;
-}
 
-.content {
-    border: 3px #DEA89E solid;
-
-
-}
