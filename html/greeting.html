@@ -1,29 +1,30 @@
 <html>
     <head>
         <link rel = "stylesheet" type = "text/css" href = "../css/greeting.css"/>
+        <link href="https://fonts.googleapis.com/css?family=Istok+Web:700|Arial" rel="stylesheet"/>
         <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
-        
+
     </head>
     <body>
-			<script src ="../js/setup_firebase_team5.js"></script>
+            <script src ="../js/setup_firebase_team5.js"></script>
         <div id="topBar">
       <div id="box"><a href="../index.html"><img src="../images/taboo_logo.png" id="taboo" alt="our logo"></a></div>
     </div>
-        <div id="content">
+        <div class="content">
 
             <h1 id="banner">Hello, <span id = "name"></span></h1>
-      
+
         </div>
-			<!--
-			<script src = "../js/greeting.js"></script>
+            <!--
+            <script src = "../js/greeting.js"></script>
 -->
 <script>
-			
+
             var out = document.getElementById("name");
             var db = firebase.database().ref().child("message");
                     db.on("value", snap => out.innerText = snap.val());
-       	
-			</script>
+
+            </script>
 
     </body>
 </html>
