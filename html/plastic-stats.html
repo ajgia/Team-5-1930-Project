@@ -3,61 +3,80 @@
   <head>
     <title>TABOO</title>
     <meta charset="utf-8">
+
+    <!-- Import scripts and style sheets -->
     <link rel="stylesheet" type="text/css" href="../css/plastic-stats.css">
     <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Archivo" rel="stylesheet">
 
     <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
     <script src="../js/setup_firebase_team5.js"></script>
+
   </head>
+
   <body>
 
     <div id="section">
-    <div id="topBar">
-      <div id="box">
-          <a href="../index.html"><img src="../images/taboo_logo.png" id="taboo" alt="our logo"></a>
+
+        <!-- Navigation bar -->
+        <div id="topBar">
+
+          <!-- Where our logo / home button goes -->
+          <div id="box">
+              <a href="../index.html"><img src="../images/taboo_logo.png" id="taboo" alt="our logo"></a>
+          </div>
+        </div>
+
+        <!-- Shocking data -->
+        <div id="stats">
+          <p id="number">60%</p>
+          <p id="products">OF MENSTRUAL <br> PRODUCTS ARE<br> MADE FROM</p>
+          <p id="LDPE">LDPE (low density polyethaline) PLASTIC</p>
+        </div>
+
+        <!-- Right navigation button leading to next page (login) -->
+        <a href="login.html">
+          <div id="right"></div>
+        </a>
+
+        <!-- Left navigation button returning to landfill page -->
+        <a href="landfill-stats.html">
+          <div id="left"></div>
+        </a>
+
+        <!-- Slider where user sees decomposition breakdown of plastics -->
+        <div class="slideWrap">
+
+          <!-- Buttons indicating increment of years -->
+          <div class="links">
+            <a href="#slide-1">1</a>
+            <a href="#slide-2">5</a>
+            <a href="#slide-3">10</a>
+            <a href="#slide-4">15</a>
+            <a href="#slide-5">20</a>
+            <a href="#slide-6">50</a>
+            <a href="#slide-7">100</a>
+            <a href="#slide-8">500</a>
+          </div>
+
+          <!-- Slides holding years pulled from database -->
+          <div class="slider">
+            <div class="slide" id="slide-0">How long does it take for LDPE products to decompose?<br> Click the buttons above to see how materials decompose over time.</div>
+            <div class="slide" id="slide-1">Year 1</div>
+            <div class="slide" id="slide-2">Year 5</div>
+            <div class="slide" id="slide-3">Year 10</div>
+            <div class="slide" id="slide-4">Year 15</div>
+            <div class="slide" id="slide-5">Year 20</div>
+            <div class="slide" id="slide-6">Year 50</div>
+            <div class="slide" id="slide-7">Year 100</div>
+            <div class="slide" id="slide-8">Year 500</div>
+            <div class="slide" id="slide-empty"></div>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <div id="stats">
-      <p id="number">60%</p>
-      <p id="products">OF MENSTRUAL <br> PRODUCTS ARE<br> MADE FROM</p>
-      <p id="LDPE">LDPE (low density polyethaline) PLASTIC</p>
-    </div>
-
-    <a href="login.html">
-      <div id="right"></div>
-    </a>
-    <a href="landfill-stats.html">
-      <div id="left"></div>
-    </a>
-
-    <div class="slideWrap">
-
-      <div class="links">
-        <a href="#slide-1">1</a>
-        <a href="#slide-2">5</a>
-        <a href="#slide-3">10</a>
-        <a href="#slide-4">15</a>
-        <a href="#slide-5">20</a>
-        <a href="#slide-6">50</a>
-        <a href="#slide-7">100</a>
-        <a href="#slide-8">500</a>
-      </div>
-
-      <div class="slider">
-        <div class="slide" id="slide-0">How long does it take for LDPE products to decompose?<br> Click the buttons above to see how materials decompose over time.</div>
-        <div class="slide" id="slide-1">Year 1</div>
-        <div class="slide" id="slide-2">Year 5</div>
-        <div class="slide" id="slide-3">Year 10</div>
-        <div class="slide" id="slide-4">Year 15</div>
-        <div class="slide" id="slide-5">Year 20</div>
-        <div class="slide" id="slide-6">Year 50</div>
-        <div class="slide" id="slide-7">Year 100</div>
-        <div class="slide" id="slide-8">Year 500</div>
-        <div class="slide" id="slide-empty"></div>
-      </div>
-    </div>
-      </div>
+    <!--
+    Grabs appropriate years from database and displays in slides
+    -->
     <script>
       var out1 = document.getElementById("slide-1");
       var db1 = firebase.database().ref().child("plastic/year1");
