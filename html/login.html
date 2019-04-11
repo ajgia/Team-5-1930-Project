@@ -1,98 +1,112 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset = "utf-8"/>
-        <title>Login</title>
-        <link rel = "stylesheet" type = "text/css" href = "../css/login.css"/>
-        <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
-        <script src="../js/setup_firebase_team5.js"></script>
-        <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-        <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+		<head>
+				<meta charset = "utf-8"/>
+				<title>Login</title>
+			
+			<!-- Import script and stylesheets -->
+				<link rel = "stylesheet" type = "text/css" href = "../css/login.css"/>
+				<script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+				<script src="../js/setup_firebase_team5.js"></script>
+				<script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+				<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
 
-    </head>
-    <body>
-        <div id="topBar">
-      <div id="box"><a href="../index.html"><img src="../images/taboo_logo.png" id="taboo" alt="our logo"></a></div>
-    </div>
+		</head>
+		<body>
+			<!-- Top Bar wih logo -->
+				<div id="topBar">
+			<div id="box"><a href="../index.html"><img src="../images/taboo_logo.png" id="taboo" alt="our logo"></a></div>
+			</div>
 
-        <div class="content">
-                    <h1 id="banner"></h1>
-            <div id="firebaseui-auth-container"></div>
-            <div id="loader">Loading...</div>
-            <a href="index.html">
-                <div id="left"></div>
-            </a>
-        </div>
-
-
-        <!-- Import JQuery -->
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-        <script>
-            // Initialize the FirebaseUI Widget using Firebase.
-            var ui = new firebaseui.auth.AuthUI(firebase.auth());
-
-            var uiConfig = {
-                callbacks: {
-                signInSuccessWithAuthResult: function(authResult, redirectUrl) {
-                    // User successfully signed in.
-                    // Return type determines whether we continue the redirect automatically
-                    // or whether we leave that to developer to handle.
-                    return true;
+			
+			<div class="content">
+				<!-- Firebase login div -->
+					<h1 id="banner"></h1>
+					<div id="firebaseui-auth-container"></div>
+					<div id="loader">Loading...</div>
+				
+				<!--Navigation arrows -->
+					<a href="index.html">
+							<div id="left"></div>
+					</a>
+			</div>
 
 
-                },
-                uiShown: function() {
-                    // The widget is rendered.
-                    // Hide the loader.
-                    document.getElementById('loader').style.display = 'none';
-                }
-                },
-                // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
-                signInFlow: 'popup',
-                signInSuccessUrl: 'greeting.html',
+				<!-- Import JQuery -->
+				<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+			
+				<!-- Set up Firebase login widget -->
+				<script>
+						// Initialize the FirebaseUI Widget using Firebase.
+						var ui = new firebaseui.auth.AuthUI(firebase.auth());
 
-                signInOptions: [
-                // Leave the lines as is for the providers you want to offer your users.
-                //firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-                //firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-                //firebase.auth.TwitterAuthProvider.PROVIDER_ID,
-                //firebase.auth.GithubAuthProvider.PROVIDER_ID,
-                firebase.auth.EmailAuthProvider.PROVIDER_ID,
-                //firebase.auth.PhoneAuthProvider.PROVIDER_ID
-                ],
-                // Terms of service url.
-                tosUrl: 'welcome.html',
-                // Privacy policy url.
-                privacyPolicyUrl: 'logged_in.html'
-            };
+						var uiConfig = {
+								callbacks: {
+								signInSuccessWithAuthResult: function(authResult, redirectUrl) {
+										// User successfully signed in.
+										// Return type determines whether we continue the redirect automatically
+										// or whether we leave that to developer to handle.
+										return true;
 
-            // The start method will wait until the DOM is loaded.
-            ui.start('#firebaseui-auth-container', uiConfig);
-        </script>
-        <script>
-            firebase.auth().onAuthStateChanged(function(user) {
-                if (user) {
-                    // User is signed in.
-                } else {
-                    // No user is signed in.
-                }
 
-            });
-        </script>
-        <script>(function(){
+								},
+								uiShown: function() {
+										// The widget is rendered.
+										// Hide the loader.
+										document.getElementById('loader').style.display = 'none';
+								}
+								},
+								// Will use popup for IDP Providers sign-in flow instead of the default, redirect.
+								signInFlow: 'popup',
+								signInSuccessUrl: 'greeting.html',
 
-    var firebase = app_firebase;
+								signInOptions: [
+								// Leave the lines as is for the providers you want to offer your users.
+								//firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+								//firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+								//firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+								//firebase.auth.GithubAuthProvider.PROVIDER_ID,
+								firebase.auth.EmailAuthProvider.PROVIDER_ID,
+								//firebase.auth.PhoneAuthProvider.PROVIDER_ID
+								],
+								// Terms of service url.
+								tosUrl: 'welcome.html',
+								// Privacy policy url.
+								privacyPolicyUrl: 'logged_in.html'
+						};
 
-    // for the current user
-    // create this user node in the database
+						// The start method will wait until the DOM is loaded.
+						ui.start('#firebaseui-auth-container', uiConfig);
+				</script>
+			
+			<!-- Checking auth state changes -->
+				<script>
+						firebase.auth().onAuthStateChanged(function(user) {
+								if (user) {
+										// User is signed in.
+								} else {
+										// No user is signed in.
+								}
 
-    firebase.auth().onAuthStateChanged(function(user){
-        firebase.database().ref("user/"+user.uid).update(
-            {
-        "name":user.displayName,
-        "email":user.email
-            });
-    });
-})()
-            </script>
-    </body>
+						});
+				</script>
+			
+			<!-- Write the user login data to database -->
+				<script>(function(){
+
+					var firebase = app_firebase;
+
+					// for the current user
+					// create this user node in the database
+
+					firebase.auth().onAuthStateChanged(function(user){
+							firebase.database().ref("user/"+user.uid).update(
+									{
+							"name":user.displayName,
+							"email":user.email
+									});
+							});
+					})()
+				</script>
+		</body>
 </html>

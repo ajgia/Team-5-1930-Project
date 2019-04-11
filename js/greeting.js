@@ -1,3 +1,6 @@
+// Displays a greeting.
+// Not functional in current product
+
 (function(){
 		
     var firebase = app_firebase;
