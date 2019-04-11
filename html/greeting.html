@@ -5,12 +5,12 @@
         <script src ="../js/setup_firebase_team5.js"></script>
     </head>
     <body>
-        <!--<script src = "../js/create_user.js"> -->
+			<script src = "../js/create_user.js"></script>
         <div id="topBar">
       <div id="box"><a href="../index.html"><img src="../images/taboo_logo.png" id="taboo" alt="our logo"></a></div>
     </div>
             <script src="../js/greeting.js"></script>
-            <h1 id="banner">Banner </h1>
+            <h1 id="banner"></h1>
         <h2 id ="name"></h2>
 
 
@@ -18,32 +18,12 @@
 
 
         </script>
-        <!-- <script>
-            var out = document.getElementById("name");
+        <script>
+            var out = document.getElementById("");
             var db = firebase.database().ref().child("");
                     db.on("value", snap => out.innerText = snap.val());
-        </script> -->
-
-        <script>
-            (function(){
-
-                    var firebase = app_firebase;
-
-                    var banner = document.getElementById("banner");
-                    var userName = " ";
+        </script> 
 
 
-                    //If the current user is authenticated then
-
-                    firebase.auth().onAuthStateChanged(function(user){
-                        if (user){
-                                    var userName=user.displayName;              // grab name of user
-                        banner.innerText = "Hello "+ userName;    // update with Personalized Hello
-
-                        }
-
-                    });
-            })();
-        </script>
     </body>
 </html>
