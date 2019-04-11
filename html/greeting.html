@@ -5,18 +5,46 @@
 		<script src ="../js/setup_firebase_team5.js"></script>
 	</head>
 	<body>
+		<!--<script src = "../js/create_user.js"> -->
 		<div id="topBar">
       <div id="box"> </div>
       <p id="taboo">TABOO</p>
     </div>
-		<div id="content">
-			<h1>Welcome, <span id = "name">Name</span>!</h1>
+			<script src="../js/greeting.js"></script>
+			<h1 id="banner">Banner </h1>
+		<h2 id ="name"></h2>
+
+
 		</div>
 		
-		<script>
+			
+		</script>
+		<!-- <script>
 			var out = document.getElementById("name");
-			var db = firebase.database().ref().child("message");
+			var db = firebase.database().ref().child("");
 					db.on("value", snap => out.innerText = snap.val());
+		</script> -->
+
+		<script>
+			(function(){
+
+					var firebase = app_firebase;
+
+					var banner = document.getElementById("banner");
+					var userName = " ";
+
+
+					//If the current user is authenticated then
+
+					firebase.auth().onAuthStateChanged(function(user){
+						if (user){
+									var userName=user.displayName;			  // grab name of user
+						banner.innerText = "Hello "+ userName;    // update with Personalized Hello
+
+						} 
+
+					});
+			})();
 		</script>
 	</body>
 </html>
