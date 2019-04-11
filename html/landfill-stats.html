@@ -4,7 +4,7 @@
     <title>TABOO</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="../css/landfill-stats.css">
-    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Source+Sans+Pro" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Source+Sans+Pro|Archivo" rel="stylesheet">
 
     <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
     <script src="../js/setup_firebase_team5.js"></script>
@@ -95,28 +95,7 @@
         var out10 = document.getElementById("slide-10");
         var db10 = firebase.database().ref().child("landfill/year10");
                 db10.on("value", snap => out10.innerText = snap.val());
-
-        DisplayImage ("../images/127.png");
-
-    //---------------------------------------------------------
-    // input param:   string name of the picture file
-    //
-    // Generic function that displays the image provided dynamically
-    //---------------------------------------------------------
-    function DisplayImage(picturefile) {
-        console.log(picturefile);
-        var container = $('<div></div>');
-        $('body').prepend(container);
-
-        var x = document.createElement("IMG");
-        x.setAttribute("src", picturefile);
-        x.setAttribute("width", "100");
-        x.setAttribute("height", "100");
-        var slide1 = document.getElementById("slide-1");
-
-        document.getElementById("slide-1").appendChild(x);
-    }
-    </script>
+        </script>
 
   </body>
 
